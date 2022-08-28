@@ -13,13 +13,14 @@ class MainActivity : AppCompatActivity() {
         val secondFragment = SecondFragment()
         val fragment1: Button = findViewById(R.id.btnFragment1)
         val fragment2: Button = findViewById(R.id.btnFragment2)
+        val exampleFragment = ExampleFragment()
 
 //       NOTE - For a fragment to transition through the rest of its lifecycle, it must be added to a FragmentManager. The        FragmentManager is responsible for determining what state its fragment should be in and then moving them into that state.
 
 //        NOTE - We want to replace our frame layout's content with either firstFragment or secondFragment. Doing so by -
 
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.frameLayoutFragment, firstFragment) // Replacing the frame layout with fragment initially so that when the app runs for the first time, firstFragment is what is seen first.
+            replace(R.id.frameLayoutFragment, exampleFragment) // Replacing the frame layout with fragment initially so that when the app runs for the first time, Example Fragment (earlier it was firstFragment) is what is seen first.
             commit() // committing the change that took place above.
         }
 
